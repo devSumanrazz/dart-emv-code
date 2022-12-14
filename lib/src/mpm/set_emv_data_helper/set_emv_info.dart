@@ -12,7 +12,7 @@ class EMVQR {
   /// length of [value] is 2.
   setPayloadFormatIndicator(String? value) {
     if (value != null) {
-      if (value.length != 2) {
+      if (value.length < 2) {
         throw ValueLengthErr(title: "PayloadFormatIndicator", length: "2");
       }
       var payloadFormatIndicator = setTLV(value, ID.payloadFormatIndicator);
